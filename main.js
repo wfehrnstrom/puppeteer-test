@@ -22,8 +22,8 @@ puppeteer.launch({headless: false}).then((browser) => {
     let pageUrl = 'https://www.publix.com/covid-vaccine/florida';
 
     let time_adjust_event = ((pageUrl) => {
-        let now = Date();
-        let target = Date.parse("2021-03-01T16:47:00");
+        let now = (new Date()).getTime();
+        let target = Date.parse("2021-03-02T17:47:00");
         if (target > now){
             if(pageload_trigger){
                 clearTimeout(pageload_trigger);
